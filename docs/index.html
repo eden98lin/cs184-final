@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<style>  
+    div.padded {  
+      padding-top: 0px;  
+      padding-right: 100px;  
+      padding-bottom: 0.25in;  
+      padding-left: 100px;  
+    }  
+  </style> 
+<title>Eden Lin  |  CS 184</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="style.css" media="screen" />
+</head>
+<body>
+<br />
+<h1 align="middle">Final Project Proposal: Add Texture to Project 3</h1>
+    <h2 align="middle">Eden Lin</h2>
+
+    <div class="padded">
+
+    <h2 align="middle">Description</h2>
+        <p>This project focus on implementing texture mapping from a 2D texture map to a 3D surface based on what we have done so far with assignment 3. There is some similarity to what we have done in assignment 1 for texture mapping, this is a 3D version of that. Original in assignment 3, the albedo was a constant, now I am going to update that value according to the texture color mapped to the surface at that location. Some ideas from assignment 1 can be adapted here. For example, normalize the coordinates in object space, pass that coordinates to the texture space to get a texel, then map that piece of texture back to the object.</p>
+        
+        <h2 align="middle">Goals and Deliverables - Plan to Deliver</h2>
+        
+        <h3 align="middle">Planar Mapping</h3>
+        
+        <p>The planar mapping should be the easiest. Drop the z coordinate of the 3D surface. To get a texel from the texture map, convert the normalized (x, y) coordinates from the 3D space to texture space. Planar mapping is illustrated below, so the deliverable here should be some geometry with normal texture on front and back. Texture on other faces should be distorted.</p>
+        
+        <div align="center">
+            <img src="images/image1.png" align="middle">
+        </div>
+        
+        <h3 align="middle">Spherical Mapping</h3>
+        
+        <p>Convert the point in 3D space to spherical coordinates of a unit sphere. The texture space coordinates will also be normalized by PI and 2PI for inclination and azimuth. This kind of mapping is best for spherical objects. For any other kind of object, the texture should be distorted along the stretched or compressed radius of the sphere.</p>
+        
+        <h3 align="middle">Cylindrical Mapping</h3>
+        
+        <p>Given a point in 3D space, convert to cylindrical coordinates where the radius is 1. The width of the texture map should correspond to the azimuth of the cylindrical coordinates, the height corresponds to the axial coordinate.</p>
+        
+        <h2 align="middle">Goals and Deliverables - Hope to Deliver</h2>
+        
+        <p>In case I get ahead of schedule, I would want to implement bump mapping and/or displacement mapping.</p>
+        
+        <h2 align="middle">Schedule</h2>
+        
+        <p>7/31-8/6: find more resources on what more can be done with texture mapping, fully understand the assignment code base, design the new structure and elements to add to the existing code. Get as much done as possible on implementation.</p>
+        
+        <p>8/7-8/13: continue working on implementation, make slides for presentation.</p>
+        
+        <h2 align="middle">Resources</h2>
+        
+        <a href="https://www.cs.cornell.edu/courses/cs4620/2017sp/slides/06rt-textures.pdf">https://www.cs.cornell.edu/courses/cs4620/2017sp/slides/06rt-textures.pdf</a>
+        
+</div>
+</body>
+</html>
+
+
+
+
